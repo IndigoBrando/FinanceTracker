@@ -1,0 +1,26 @@
+<!-- item_expense.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="?android:attr/selectableItemBackground" >
+
+    <TextView
+        android:id="@+id/tvExpenseAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Amount"
+        android:textSize="16sp"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/tvExpenseCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Category"
+        android:textSize="16sp"
+        android:gravity="end" />
+</LinearLayout>

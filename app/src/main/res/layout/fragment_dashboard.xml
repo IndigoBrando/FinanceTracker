@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+
+    <!-- Display total spent amount for today -->
+    <TextView
+        android:id="@+id/tvWalletBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wallet Balance: $0.00"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Display the remaining balance -->
+    <TextView
+        android:id="@+id/tvRemainingBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remaining Balance: $0.00"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvWalletBalance"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Button to set wallet balance -->
+    <Button
+        android:id="@+id/btnSetWalletBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Wallet Balance"
+        app:layout_constraintTop_toBottomOf="@id/tvRemainingBalance"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Button to edit wallet balance -->
+    <Button
+        android:id="@+id/btnEditWalletBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Wallet Balance"
+        app:layout_constraintTop_toBottomOf="@id/tvRemainingBalance"
+        app:layout_constraintStart_toEndOf="@id/btnSetWalletBalance"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"/>
+
+    <!-- Button to add an expense -->
+    <Button
+        android:id="@+id/btnAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Expense"
+        app:layout_constraintTop_toBottomOf="@id/btnSetWalletBalance"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- EditText for Amount Spent -->
+    <EditText
+        android:id="@+id/etAmountSpent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/btnAddExpense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Spinner for Category selection -->
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etAmountSpent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Layout for dynamically added expense tabs -->
+    <LinearLayout
+        android:id="@+id/expensesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- RecyclerView for displaying transaction history -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTransactions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pieChart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Pie chart for expenses -->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/expensesLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.financetracker"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.financetracker"
@@ -36,4 +36,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")  // For PieChart
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")  // For RecyclerView
+    implementation ("com.google.android.material:material:1.6.0") // For Material Design Components
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4") // For layout management
 }
